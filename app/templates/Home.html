@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html style="font-size: 16px">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Book Recommender, Easy to use" />
+    <meta name="description" content="" />
+    <meta name="page_type" content="np-template-header-footer-from-plugin" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='nicepage.css') }}"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='Home.css') }}"
+      media="screen"
+    />
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="{{ url_for('static', filename='jquery.js') }}"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="{{ url_for('static', filename='nicepage.js') }}"
+      defer=""
+    ></script>
+    <meta name="generator" content="Nicepage 3.20.4, nicepage.com" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "",
+        "logo": "images/download.png"
+      }
+    </script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="Home" />
+    <meta property="og:type" content="website" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font: 16px Arial;
+      }
+
+      /*the container must be positioned relative:*/
+      .autocomplete {
+        position: relative;
+        display: inline-block;
+      }
+
+      input {
+        border: 1px solid transparent;
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      input[type="text"] {
+        color: black;
+        background-color: #f1f1f1;
+        width: 100%;
+      }
+
+      input[type="submit"] {
+        background-color: DodgerBlue;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .autocomplete-items {
+        color: black;
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+      }
+
+      .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+      }
+
+      /*when hovering an item:*/
+      .autocomplete-items div:hover {
+        background-color: #e9e9e9;
+      }
+
+      /*when navigating through the items using the arrow keys:*/
+      .autocomplete-active {
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body class="u-body">
+    <header class="u-clearfix u-header u-header" id="sec-af99">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <a
+          href="https://www.ai-camp.org/"
+          class="u-image u-logo u-image-1"
+          data-image-width="216"
+          data-image-height="220"
+          title="ai-camp"
+          target="_blank"
+        >
+          <img
+            src="{{ url_for('static', filename='/images/download.png') }}"
+            class="u-logo-image u-logo-image-1"
+            data-image-width="64"
+          />
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div
+            class="menu-collapse"
+            style="
+              font-size: 1rem;
+              letter-spacing: 0px;
+              font-weight: 700;
+              text-transform: uppercase;
+            "
+          >
+            <a
+              class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+              href="#"
+            >
+              <svg>
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="#menu-hamburger"
+                ></use>
+              </svg>
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <symbol
+                    id="menu-hamburger"
+                    viewBox="0 0 16 16"
+                    style="width: 16px; height: 16px"
+                  >
+                    <rect y="1" width="16" height="2"></rect>
+                    <rect y="7" width="16" height="2"></rect>
+                    <rect y="13" width="16" height="2"></rect>
+                  </symbol>
+                </defs>
+              </svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+              <li class="u-nav-item">
+                <a
+                  class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+                  href="{{ url_for('home') }}"
+                  style="padding: 10px 0px"
+                  >Home</a
+                >
+              </li>
+              <li class="u-nav-item">
+                <a
+                  class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+                  href="{{ url_for('project') }}"
+                  style="padding: 10px 0px"
+                  >Our Project</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div
+              class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav"
+            >
+              <div class="u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul
+                  class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"
+                >
+                  <li class="u-nav-item">
+                    <a
+                      class="u-button-style u-nav-link"
+                      href="{{ url_for('home') }}"
+                      style="padding: 10px 0px"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="u-nav-item">
+                    <a
+                      class="u-button-style u-nav-link"
+                      href="{{ url_for('project') }}"
+                      style="padding: 10px 0px"
+                      >Our Project</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+        <h2
+          class="u-custom-font u-subtitle u-text u-text-default u-text-font u-text-1"
+        >
+          Book Recommender
+        </h2>
+      </div>
+    </header>
+    <section
+      class="u-align-left u-clearfix u-image u-shading u-section-1"
+      src=""
+      data-image-width="150"
+      data-image-height="138"
+      id="sec-67e6"
+    >
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-default u-title u-text-1">
+          Find your next book!
+        </h1>
+        <p class="u-large-text u-text u-text-variant u-text-2">
+          Type your favorite book in the box below and search to see what other
+          books would be great reads for you!<br />
+          <br />
+        </p>
+        <!--This should be styled w/ things actually in the css-->
+        <div class="u-form u-form-1">
+          <form
+            action="{{url_for('recommendations')}}"
+            method="POST"
+            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+            style="padding: 10px"
+            source="custom"
+            name="form"
+            autocomplete="off"
+          >
+            <div class="u-form-group u-form-message autocomplete">
+              <label for="message-4af4" class="u-form-control-hidden u-label"
+                >Message</label
+              >
+              <input
+                id="text_gen_input"
+                type="text"
+                name="prompt"
+                placeholder="Your favorite book"
+              />
+            </div>
+            <div class="u-align-left u-form-group u-form-submit">
+              <a
+                id="text_gen_button"
+                href="#"
+                class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-radius-6 u-btn-1"
+                >Search<br
+              /></a>
+            </div>
+            <div class="u-form-send-message u-form-send-success">
+              Thank you! Your message has been sent.
+            </div>
+            <div class="u-form-send-error u-form-send-message">
+              Unable to send your message. Please fix errors then try again.
+            </div>
+            <input type="hidden" value="" name="recaptchaResponse" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-5 u-section-2" id="sec-d6ee">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-1">Recommendations:</h3>
+        <ul id="generated_ul" class="u-text u-text-2">
+          <!-- generated items will be here. -->
+        </ul>
+      </div>
+    </section>
+
+    <footer
+      class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
+      id="sec-28bc"
+    >
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">
+          © 2021 Copyright:&nbsp;<a
+            class="text-white u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1"
+            href="https://www.ai-camp.org/"
+            >ai-camp.org</a
+          >
+        </p>
+      </div>
+    </footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a
+        class="u-link"
+        href="https://nicepage.com/website-templates"
+        target="_blank"
+      >
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/" target="_blank">
+        <span>Website Builder Software</span> </a
+      >.
+    </section>
+  </body>
+  <script>
+    function autocomplete(inp, arr) {
+      /*the autocomplete function takes two arguments,
+    the text field element and an array of possible autocompleted values:*/
+      var currentFocus;
+      /*execute a function when someone writes in the text field:*/
+      inp.addEventListener("input", function (e) {
+        var a,
+          b,
+          i,
+          val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) {
+          return false;
+        }
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*for each item in the array...*/
+        for (i = 0; i < arr.length; i++) {
+          /*check if the item starts with the same letters as the text field value:*/
+          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            /*create a DIV element for each matching element:*/
+            b = document.createElement("DIV");
+            /*make the matching letters bold:*/
+            b.innerHTML =
+              "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].substr(val.length);
+            /*insert a input field that will hold the current array item's value:*/
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            /*execute a function when someone clicks on the item value (DIV element):*/
+            b.addEventListener("click", function (e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+                (or any other open lists of autocompleted values:*/
+              closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+      });
+      /*execute a function presses a key on the keyboard:*/
+      inp.addEventListener("keydown", function (e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) {
+          //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+      });
+      function addActive(x) {
+        /*a function to classify an item as "active":*/
+        if (!x) return false;
+        /*start by removing the "active" class on all items:*/
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = x.length - 1;
+        /*add class "autocomplete-active":*/
+        x[currentFocus].classList.add("autocomplete-active");
+      }
+      function removeActive(x) {
+        /*a function to remove the "active" class from all autocomplete items:*/
+        for (var i = 0; i < x.length; i++) {
+          x[i].classList.remove("autocomplete-active");
+        }
+      }
+      function closeAllLists(elmnt) {
+        /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+          if (elmnt != x[i] && elmnt != inp) {
+            x[i].parentNode.removeChild(x[i]);
+          }
+        }
+      }
+      /*execute a function when someone clicks in the document:*/
+      document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+      });
+    }
+
+    /*An array containing all the country names in the world:*/
+    var books = [
+      "Animal Farm",
+      "A Clockwork Orange",
+      "The Plague",
+      "An Enquiry Concerning Human Understanding",
+      "A Fire Upon the Deep",
+    ];
+
+    /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+    autocomplete(document.getElementById("text_gen_input"), books);
+  </script>
+  <script
+    class="u-script"
+    type="text/javascript"
+    src="{{ url_for('static', filename='text_gen.js') }}"
+    defer=""
+  ></script>
+</html>
