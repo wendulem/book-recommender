@@ -41,7 +41,7 @@ from doc2vec_simple import doc2vec_simple_list
 
 
 # setup the webservver
-# port = 12347
+port = 12345
 # base_url = get_base_url(port)
 # print("Hello world: " + base_url )
 # if dev locally
@@ -89,6 +89,6 @@ if __name__ == "__main__":
     # change the code.ai-camp.org to the site where you are editing this file.
     # print("Try to open\n\n    https://cocalc5.ai-camp.org" + base_url + '\n\n')
     # remove debug=True when deploying it
-    # app.run(host = '0.0.0.0', port=port, debug=True)
-    app.run()
+    app.run(host = '0.0.0.0', port=port, debug=True)
+    #app.run()
     import sys; sys.exit(0)
