@@ -50,7 +50,7 @@ port = 12345
 app = Flask(__name__)
 
 # @app.route(base_url)
-app.route('/')
+@app.route('/')
 def home():
     return render_template('Home.html', generated=None)
 
